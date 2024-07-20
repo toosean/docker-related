@@ -51,3 +51,7 @@ server {
 ```
 
 - docker compose restart webserver
+
+# Renew
+
+- docker compose run --rm certbot renew
