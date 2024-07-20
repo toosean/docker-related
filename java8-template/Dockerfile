@@ -11,4 +11,4 @@ RUN mvn clean package
 FROM base AS final
 WORKDIR /app
 COPY --from=build /src/crmeb-admin/target/Crmeb-admin.jar /app/app.jar
-RUN ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
