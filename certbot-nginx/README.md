@@ -54,4 +54,14 @@ server {
 
 # Renew
 
+## Renew manually
+
 - docker compose run --rm certbot renew
+
+## Renew automatically
+
+- crontab -e
+
+```bash
+0 0 */5 * * cd [path/to/git/local] && docker compose run --rm certbot renew
+```
