@@ -8,11 +8,11 @@ services:
       - "443:443"
     restart: always
     volumes:
-      - /opt/aiproxy-nginx-letsencrypt-docker/etc/nginx/conf.d/:/etc/nginx/conf.d/:ro
-      - /opt/aiproxy-nginx-letsencrypt-docker/var/www/certbot/:/var/www/certbot/:ro
-      - /opt/aiproxy-nginx-letsencrypt-docker/etc/letsencrypt/:/etc/letsencrypt/:ro
+      - ./etc/nginx/conf.d/:/etc/nginx/conf.d/:ro
+      - ./var/www/certbot/:/var/www/certbot/:ro
+      - ./etc/letsencrypt/:/etc/letsencrypt/:ro
   certbot:
     image: certbot/certbot:latest
     volumes:
-      - /opt/aiproxy-nginx-letsencrypt-docker/var/www/certbot/:/var/www/certbot/:rw
-      - /opt/aiproxy-nginx-letsencrypt-docker/etc/letsencrypt/:/etc/letsencrypt/:rw
+      - ./var/www/certbot/:/var/www/certbot/:rw
+      - ./etc/letsencrypt/:/etc/letsencrypt/:rw
